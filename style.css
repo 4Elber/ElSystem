@@ -1,0 +1,157 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #2692db;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;  /* Ajuste o tamanho do logo conforme necessário */
+    height: auto;
+    margin-right: 10px;  /* Espaçamento entre o logo e o título */
+    border-radius: 5px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.cart {
+    background-color: #ff6f61;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.products, .cart-items {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 45%;
+}
+
+.products h2, .cart-items h2 {
+    text-align: center;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-between;
+}
+
+.product {
+    background-color: #efefef;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.product button {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.product button:hover {
+    background-color: #555;
+}
+
+.cart-items ul {
+    list-style: none;
+    padding: 0;
+}
+
+.cart-items li {
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-items button {
+    background-color: #ff6f61;
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.cart-items button:hover {
+    background-color: #e85043;
+}
+
+.total {
+    text-align: center;
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+/* Feedback de mensagem */
+.message {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.message.visible {
+    opacity: 1;
+}
+
+.message.hidden {
+    display: none;
+}
+
+#clear-cart {
+    display: block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+#clear-cart:hover {
+    background-color: #ff3333;
+}
+
