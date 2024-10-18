@@ -1,3 +1,4 @@
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -6,9 +7,9 @@ body {
 }
 
 header {
-    background-color: #2692db;
+    background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,7 +24,6 @@ header {
     width: 50px;  /* Ajuste o tamanho do logo conforme necessário */
     height: auto;
     margin-right: 10px;  /* Espaçamento entre o logo e o título */
-    border-radius: 5px;
 }
 
 header h1 {
@@ -57,6 +57,7 @@ main {
 .product-list {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .product {
@@ -64,11 +65,13 @@ main {
     padding: 10px;
     border-radius: 5px;
     text-align: center;
+    width: 30%;
+    margin-bottom: 20px;
 }
 
 .product img {
-    width: 150px;
-    height: 150px;
+    width: 100%;
+    height: auto;
     object-fit: cover;
     margin-bottom: 10px;
 }
@@ -117,6 +120,24 @@ main {
     margin-top: 20px;
 }
 
+/* Botão de excluir tudo */
+#clear-cart {
+    display: block;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 20px auto;
+    width: 50%;
+    text-align: center;
+}
+
+#clear-cart:hover {
+    background-color: #ff3333;
+}
+
 /* Feedback de mensagem */
 .message {
     position: fixed;
@@ -138,20 +159,59 @@ main {
     display: none;
 }
 
-#clear-cart {
-    display: block;
-    background-color: #ff4d4d;
-    color: white;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    margin: 20px auto;
-    width: 50%;
-    text-align: center;
+/* ------- Tornando o site responsivo ------- */
+
+/* Estilos para telas menores (mobile) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .products, .cart-items {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .product {
+        width: 100%;
+    }
+
+    .cart-items li {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .cart-items button {
+        margin-top: 10px;
+    }
+
+    #clear-cart {
+        width: 90%;
+    }
 }
 
-#clear-cart:hover {
-    background-color: #ff3333;
-}
+/* Estilos para telas muito pequenas (smartphones) */
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 20px;
+    }
 
+    .logo {
+        width: 40px;
+    }
+
+    .product button {
+        padding: 8px;
+        font-size: 14px;
+    }
+
+    .total {
+        font-size: 16px;
+    }
+}
