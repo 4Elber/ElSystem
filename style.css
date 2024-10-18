@@ -21,7 +21,7 @@ header {
 }
 
 .logo {
-    width: 50px;  
+    width: 80px;  
     height: auto;
     margin-right: 10px;
     border-radius: 5px;
@@ -119,10 +119,30 @@ main {
     background-color: #555;
 }
 
+/* Carrinho de compras com scroll */
 .cart-items ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    max-height: 200px;  /* Altura máxima do scroll */
+    overflow-y: auto;   /* Adiciona scroll vertical */
 }
+
+.cart-items ul::-webkit-scrollbar {
+    width: 8px;  /* Largura da barra de rolagem (Chrome/Safari) */
+}
+
+.cart-items ul::-webkit-scrollbar-thumb {
+    background-color: #ff6f61;  /* Cor do "polegar" da barra */
+    border-radius: 4px;
+}
+
+.cart-items ul::-webkit-scrollbar-track {
+    background-color: #f0f0f0;  /* Cor de fundo da barra */
+}
+
+/* Restante do CSS continua igual */
+
 
 .cart-items li {
     margin-bottom: 10px;
