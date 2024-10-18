@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-commerce Example</title>
+    <title>ElSystemTI</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="script.js">
 </head>
-
 <body>
     <header>
         <div class="logo-container">
             <img src="logo.png" alt="Logo da Loja" class="logo">
-            <h1>ElSystem Enterprise</h1>
-        </div>
-        <div class="cart">
-            <span id="cart-count">0</span> itens no carrinho
+            <h1>ElSystem Tecnology</h1>
         </div>
     </header>
-    
+
+    <!-- Ícone suspenso do carrinho -->
+    <div class="floating-cart" onclick="openCart()">
+        <img src="https://img.icons8.com/ios-filled/50/ffffff/shopping-cart.png" alt="Carrinho" class="cart-icon">
+        <span id="cart-count" class="cart-count">0</span>
+    </div>
 
     <main>
         <section class="products">
@@ -46,7 +45,7 @@
             </div>
         </section>
 
-        <section class="cart-items">
+        <section class="cart-items" id="cart-items-section">
             <h2>Carrinho</h2>
             <ul id="cart-list">
                 <li>Nenhum item no carrinho</li>
@@ -56,11 +55,10 @@
             </div>
             <button id="clear-cart" onclick="clearCart()">Excluir tudo</button>
         </section>
-
-        <div id="message" class="message hidden">Produto adicionado ao carrinho!</div>
     </main>
+
+    <div id="message" class="message hidden">Produto adicionado ao carrinho!</div>
 
     <script src="script.js"></script>
 </body>
-
 </html>

@@ -7,9 +7,9 @@ body {
 }
 
 header {
-    background-color: #333;
+    background-color: #27c1d8;
     color: white;
-    padding: 20px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -21,9 +21,10 @@ header {
 }
 
 .logo {
-    width: 50px;  /* Ajuste o tamanho do logo conforme necessário */
+    width: 50px;  
     height: auto;
-    margin-right: 10px;  /* Espaçamento entre o logo e o título */
+    margin-right: 10px;
+    border-radius: 5px;
 }
 
 header h1 {
@@ -31,12 +32,41 @@ header h1 {
     font-size: 24px;
 }
 
-.cart {
+/* Ícone suspenso do carrinho */
+.floating-cart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
     background-color: #ff6f61;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 1000;
 }
 
+.cart-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #ff0000;
+    color: white;
+    padding: 5px 7px;
+    border-radius: 50%;
+    font-size: 14px;
+}
+
+/* Estilos principais */
 main {
     display: flex;
     justify-content: space-around;
@@ -120,7 +150,6 @@ main {
     margin-top: 20px;
 }
 
-/* Botão de excluir tudo */
 #clear-cart {
     display: block;
     background-color: #ff4d4d;
@@ -159,9 +188,7 @@ main {
     display: none;
 }
 
-/* ------- Tornando o site responsivo ------- */
-
-/* Estilos para telas menores (mobile) */
+/* Tornar o site responsivo */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
@@ -196,7 +223,6 @@ main {
     }
 }
 
-/* Estilos para telas muito pequenas (smartphones) */
 @media (max-width: 480px) {
     header h1 {
         font-size: 20px;
@@ -214,4 +240,22 @@ main {
     .total {
         font-size: 16px;
     }
+}
+
+/* Exibir carrinho ao clicar no ícone */
+.cart-items.active {
+    display: block;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    z-index: 1001;
+}
+
+.cart-items {
+    display: none;
 }
