@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ElSystemTI</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <div class="logo-container">
@@ -15,7 +17,7 @@
     </header>
 
     <!-- Ícone suspenso do carrinho -->
-    <div class="floating-cart" onclick="openCart()">
+    <div class="floating-cart" onclick="toggleCart()">
         <img src="https://img.icons8.com/ios-filled/50/ffffff/shopping-cart.png" alt="Carrinho" class="cart-icon">
         <span id="cart-count" class="cart-count">0</span>
     </div>
@@ -45,6 +47,7 @@
             </div>
         </section>
 
+        <!-- Seção do Carrinho de Compras -->
         <section class="cart-items" id="cart-items-section">
             <h2>Carrinho</h2>
             <ul id="cart-list">
@@ -54,6 +57,7 @@
                 <strong>Total: R$ <span id="total-amount">0</span></strong>
             </div>
             <button id="clear-cart" onclick="clearCart()">Excluir tudo</button>
+            <button id="checkout-button" onclick="openCheckout()">Finalizar Compra</button>
         </section>
     </main>
 
@@ -61,4 +65,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

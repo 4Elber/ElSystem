@@ -6,6 +6,7 @@ window.onload = () => {
     updateCartDisplay();
 };
 
+// Função para adicionar um item ao carrinho
 function addToCart(productName, price) {
     cart.push({ name: productName, price: price });
     totalAmount += price;
@@ -14,6 +15,13 @@ function addToCart(productName, price) {
     updateCartDisplay();
 }
 
+// Função para exibir ou esconder o carrinho
+function toggleCart() {
+    const cartSection = document.getElementById('cart-items-section');
+    cartSection.classList.toggle('active');
+}
+
+// Função para remover um item do carrinho
 function removeFromCart(index) {
     totalAmount -= cart[index].price;
     cart.splice(index, 1);
@@ -21,6 +29,7 @@ function removeFromCart(index) {
     updateCartDisplay();
 }
 
+// Função para exibir o carrinho
 function updateCartDisplay() {
     document.getElementById('cart-count').innerText = cart.length;
     let cartList = document.getElementById('cart-list');
@@ -37,16 +46,43 @@ function updateCartDisplay() {
     document.getElementById('total-amount').innerText = totalAmount.toFixed(2);
 }
 
+// Função para abrir a seção de finalização de compra
+function openCheckout() {
+    document.getElementById('checkout-section').classList.remove('hidden');
+    document.getElementById('checkout-items').innerHTML = cart.map(item => `<p>${item.name} - R$ ${item.price.toFixed(2)}</p>`).join('');
+    document.getElementById('checkout-total').innerText = totalAmount.toFixed(2);
+}
+
+// Função para fechar a seção de finalização de compra
+function openCheckout() {
+    // Verifica se o carrinho tem itens
+    if (cart.length === 0) {
+        alert("Seu carrinho está vazio. Adicione itens antes de finalizar a compra.");
+        return; // Impede a abertura da página de checkout se o carrinho estiver vazio
+    }
+    
+    // Armazena os itens do carrinho no localStorage para uso na página de checkout
+    localStorage.setItem('cartForCheckout', JSON.stringify(cart));
+    localStorage.setItem('totalForCheckout', totalAmount.toFixed(2));
+    
+    // Abre a página de checkout em uma nova aba
+    window.open('checkout.html', '_blank');
+}
+
+// Finalizar compra
+document.getElementById('checkout-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    alert("Compra concluída com sucesso!");
+    clearCart();  // Limpa o carrinho após a compra
+    closeCheckout();
+});
+
+// Funções auxiliares
 function clearCart() {
     cart = [];
     totalAmount = 0;
     saveCartToStorage();
-    showMessage("Carrinho limpo!");
     updateCartDisplay();
-}
-
-function openCart() {
-    document.getElementById('cart-items-section').classList.toggle('active');
 }
 
 function saveCartToStorage() {

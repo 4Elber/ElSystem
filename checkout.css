@@ -1,0 +1,105 @@
+/* Seção de Checkout */
+.checkout-section {
+    padding: 30px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    margin: 40px auto;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+.checkout-section h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+#checkout-items p {
+    font-size: 16px;
+    color: #555;
+    padding: 8px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.checkout-section .total {
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.checkout-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.checkout-section label {
+    font-size: 16px;
+    color: #333;
+}
+
+.checkout-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.checkout-section input:focus {
+    border-color: #27c1d8;
+}
+
+.checkout-section button {
+    padding: 12px;
+    font-size: 18px;
+    color: white;
+    background-color: #27c1d8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.checkout-section button:hover {
+    background-color: #1da5b6;
+}
+
+.checkout-section button[type="button"] {
+    background-color: #ff4d4d;
+    margin-top: 10px; /* Adiciona margem no botão "Cancelar" */
+}
+
+.checkout-section button[type="button"]:hover {
+    background-color: #e84343;
+}
+
+.checkout-section button[type="submit"] {
+    margin-bottom: 10px; /* Adiciona espaço entre "Concluir Pedido" e "Cancelar" */
+}
+
+
+/* Responsividade para dispositivos móveis */
+@media (max-width: 600px) {
+    .checkout-section {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .checkout-section h2 {
+        font-size: 24px;
+    }
+
+    .checkout-section .total {
+        font-size: 18px;
+    }
+}
