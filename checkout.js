@@ -16,11 +16,10 @@ window.onload = () => {
 };
 
 // Lida com o envio do formulário de checkout
-document.getElementById('checkout-form').addEventListener('submit', function(event) {
+document.getElementById('checkout-form').addEventListener('submit', function (event) {
     event.preventDefault();
     alert("Compra concluída com sucesso!");
 
-    // Limpa os dados do carrinho no localStorage
-    localStorage.removeItem('cartForCheckout');
-    localStorage.removeItem('totalForCheckout');
+    // Função para fechar a seção de finalização de compra
+    window.close();
 });
