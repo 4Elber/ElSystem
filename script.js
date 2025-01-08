@@ -69,14 +69,6 @@ function openCheckout() {
     window.open('checkout.html', '_blank');
 }
 
-// Finalizar compra
-document.getElementById('checkout-form').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert("Compra concluída com sucesso!");
-    clearCart();  // Limpa o carrinho após a compra
-    closeCheckout();
-});
-
 // Funções auxiliares
 function clearCart() {
     cart = [];
